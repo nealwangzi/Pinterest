@@ -1,26 +1,92 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aWD-On-frE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Photo Stream View Controller-->
+        <scene sceneID="0dO-6O-Wwp">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <collectionViewController id="aWD-On-frE" customClass="PhotoStreamViewController" customModule="Pinterest" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Av0-Qw-e4o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewLayout key="collectionViewLayout" id="Jfg-aG-QW0" customClass="PinterestLayout" customModule="Pinterest" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pD2-TO-FC2" customClass="AnnotatedPhotoCell" customModule="Pinterest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYQ-pa-oBL" customClass="RoundedCornersView" customModule="Pinterest" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-IS-5L6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="zdq-4V-mgV"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pui-Wf-xoh">
+                                                    <rect key="frame" x="4" y="124" width="172" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaW-EX-Ub2">
+                                                    <rect key="frame" x="4" y="145" width="172" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.047143883999999997" green="0.36116248369999998" blue="0.163305968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="pui-Wf-xoh" firstAttribute="top" secondItem="8PD-IS-5L6" secondAttribute="bottom" constant="4" id="CuK-09-i8m"/>
+                                                <constraint firstItem="jaW-EX-Ub2" firstAttribute="leading" secondItem="MYQ-pa-oBL" secondAttribute="leading" constant="4" id="G2l-4h-5ge"/>
+                                                <constraint firstAttribute="trailing" secondItem="jaW-EX-Ub2" secondAttribute="trailing" constant="4" id="TAE-Yx-gf3"/>
+                                                <constraint firstAttribute="trailing" secondItem="pui-Wf-xoh" secondAttribute="trailing" constant="4" id="UbG-FH-eD3"/>
+                                                <constraint firstAttribute="trailing" secondItem="8PD-IS-5L6" secondAttribute="trailing" id="Vhk-iW-GLa"/>
+                                                <constraint firstItem="8PD-IS-5L6" firstAttribute="leading" secondItem="MYQ-pa-oBL" secondAttribute="leading" id="ef9-TI-fF3"/>
+                                                <constraint firstItem="pui-Wf-xoh" firstAttribute="leading" secondItem="MYQ-pa-oBL" secondAttribute="leading" constant="4" id="fr4-ok-d1T"/>
+                                                <constraint firstItem="jaW-EX-Ub2" firstAttribute="top" secondItem="pui-Wf-xoh" secondAttribute="bottom" id="mTu-9r-dcL"/>
+                                                <constraint firstItem="8PD-IS-5L6" firstAttribute="top" secondItem="MYQ-pa-oBL" secondAttribute="top" id="per-jn-uPM"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="MYQ-pa-oBL" firstAttribute="leading" secondItem="pD2-TO-FC2" secondAttribute="leading" id="7b5-uh-ECI"/>
+                                    <constraint firstItem="MYQ-pa-oBL" firstAttribute="top" secondItem="pD2-TO-FC2" secondAttribute="top" id="Hcw-Ae-bg4"/>
+                                    <constraint firstAttribute="trailing" secondItem="MYQ-pa-oBL" secondAttribute="trailing" id="Rnh-SI-nWU"/>
+                                    <constraint firstAttribute="bottom" secondItem="MYQ-pa-oBL" secondAttribute="bottom" id="h7N-j3-LeA"/>
+                                </constraints>
+                                <size key="customSize" width="180" height="180"/>
+                                <connections>
+                                    <outlet property="captionLabel" destination="pui-Wf-xoh" id="ACt-z8-B6R"/>
+                                    <outlet property="commentLabel" destination="jaW-EX-Ub2" id="c0n-pd-y6T"/>
+                                    <outlet property="imageView" destination="8PD-IS-5L6" id="eCL-kj-4kD"/>
+                                    <outlet property="imageViewHeightLayoutConstraint" destination="zdq-4V-mgV" id="BVz-XZ-rnL"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="aWD-On-frE" id="Nn3-ZD-eSh"/>
+                            <outlet property="delegate" destination="aWD-On-frE" id="E7K-gi-NfT"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MsX-Hn-mEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="46" y="121"/>
         </scene>
     </scenes>
 </document>
